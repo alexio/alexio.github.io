@@ -96,14 +96,17 @@
     </div>
 </div>
 <script type="text/javascript">
-    console.log("Try1")
-    function getCookie(cookieKey) {
-        var cookieKeyIndex = document.cookie.indexOf(cookieKey)
+    console.log("Try22")
+    function getCookie2(cookieKey) {
+        var cookieString = document.cookie + ";"
+        var cookieKeyIndex = cookieString.indexOf(cookieKey)
+        console.log("KeyIndex: " + cookieKeyIndex)
         if (cookieKeyIndex == -1) {
             return null
         }
-        var endOfCookieVal = document.cookie.substring(cookieKeyIndex).indexOf(";")
-        return document.cookie.substring(cookieKeyIndex + cookieKey.length + 1, cookieKeyIndex + endOfCookieVal)
+        var endOfCookieVal = cookieString.substring(cookieKeyIndex).indexOf(";")
+        console.log("EndKeyIndex: " + endOfCookieVal)
+        return cookieString.substring(cookieKeyIndex + cookieKey.length + 1, cookieKeyIndex + endOfCookieVal)
     }
 
     var cookieKey = "snkrs-hunt-count"
