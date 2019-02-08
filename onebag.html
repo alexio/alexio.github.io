@@ -96,7 +96,8 @@
     </div>
 </div>
 <script type="text/javascript">
-    console.log("Try22")
+    console.log("Try33")
+
     function getCookie2(cookieKey) {
         var cookieString = document.cookie + ";"
         var cookieKeyIndex = cookieString.indexOf(cookieKey)
@@ -113,7 +114,7 @@
     var cookieVal = getCookie(cookieKey)
     console.log("CookieVal " + cookieVal)
     var cookieInt = 0
-    if (cookieVal != null) {
+    if (cookieVal != null && !isNaN(cookieVal)) {
         cookieInt = parseInt(cookieVal)
     }
     console.log("CookieInt " + cookieVal)
