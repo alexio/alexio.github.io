@@ -47,13 +47,13 @@ function clearCookies() {
 function hintCount() {
     var hintCount = 0;
     let keys = [firstCookieKey, secondCookieKey, finalCookieKey];
-     keys.forEach(function(key) {
+    keys.forEach(function (key) {
         console.log(key);
 
         if (hasCookie(key)) {
             hintCount += 1
         }
-     });
+    });
     return hintCount
 }
 
@@ -64,7 +64,8 @@ function setRemainingMessage() {
         setDeepLink();
         message = "Shoe unlocked!!";
     } else {
-        message = "Only " + count + " more spots left!";
+        var remaining = 3 - count
+        message = "Only " + remaining + " more spots left!";
     }
     updateButton(message)
 }
