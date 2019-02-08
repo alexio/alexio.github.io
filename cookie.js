@@ -47,11 +47,13 @@ function clearCookies() {
 function hintCount() {
     var hintCount = 0;
     let keys = [firstCookieKey, secondCookieKey, finalCookieKey];
-    for (let key in keys) {
+     keys.forEach(function(key) {
+        console.log(key);
+
         if (hasCookie(key)) {
             hintCount += 1
         }
-    }
+     });
     return hintCount
 }
 
@@ -79,4 +81,4 @@ function setDeepLink() {
 // console.log("CookieInt " + cookieVal);
 // updateButton("Check In Count: " + cookieInt);
 
-
+//Nike - Scavenger Hunt Location 1
