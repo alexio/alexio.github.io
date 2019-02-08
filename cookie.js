@@ -55,6 +55,24 @@ function hintCount() {
     return hintCount
 }
 
+function setRemainingMessage() {
+    let count = hintCount();
+    var message;
+    if (count === 3) {
+        setDeepLink();
+        message = "Shoe unlocked!!";
+    } else {
+        message = "Only " + count + " more spots left!";
+    }
+    updateButton(message)
+}
+
+function setDeepLink() {
+    let deepLink = "SNKRS://story/6dc85f9a-61ae-452c-ab47-a3ec7d8827f1";
+    let button = document.getElementById("appLink");
+    button.href = deepLink;
+}
+
 // var cookieInt = getCookieInt(cookieKeyOld);
 // cookieInt += 1;
 // putCookie(cookieKey, cookieInt);
