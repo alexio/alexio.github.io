@@ -72,7 +72,7 @@
     </style>
 </head>
 <body>
-<div class="vertical-center">
+<div id="top-con" class="vertical-center">
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
@@ -87,7 +87,9 @@
         <div style="height: 20px"></div>
         <div class="row">
             <div class="col-12 text-center">
-                <button id="check_count" type="button" class="btn btn-success">Check In</button>
+                <a id="appLink">
+                    <button id="check_count" type="button" class="btn btn-success">Check In</button>
+                </a>
             </div>
         </div>
         <div style="height: 40px"></div>
@@ -102,8 +104,12 @@
 </div>
 <script src="cookie.js"></script>
 <script type="text/javascript">
-    console.log("Try66")
-    document.cookie = "snkrs-hunt-count=0"
+    putCookie(firstCookieKey, "true");
+
+    let clearElement = document.getElementById("top-con");
+    clearElement.onclick = clearCookies;
+
+    setRemainingMessage()
 </script>
 </body>
 </html>
