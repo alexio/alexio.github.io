@@ -70,27 +70,6 @@
             align-items: center;
         }
     </style>
-    <script type="text/javascript">
-        function getCookie(cookieKey) {
-            var cookieKeyIndex = document.cookie.indexOf(cookieKey)
-            if (cookieKeyIndex == -1) {
-                return null
-            }
-            var endOfCookieVal = document.cookie.substring(cookieKeyIndex).indexOf(";")
-            return document.cookie.substring(cookieKeyIndex + cookieKey.length + 1, cookieKeyIndex + endOfCookieVal)
-        }
-
-        var cookieKey = "snkrs-hunt-count"
-        var cookieVal = getCookie(cookieKey)
-        var cookieInt = 0
-        if (cookieVal != null) {
-            cookieInt = parseInt(cookieVal)
-        }
-
-        var button = document.getElementById("check-count")
-        button.innerHTML = "Check In Count: " + cookieInt
-        document.cookie = cookieKey + "=" + (cookieInt + 1)
-    </script>
 </head>
 <body>
 <div class="vertical-center">
@@ -111,10 +90,31 @@
         <div style="height: 40px"></div>
         <div class="row">
             <div class="col-12 text-center">
-                <button id="check-count" type="button" class="btn btn-success">Check In</button>
+                <button id="check_count" type="button" class="btn btn-success">Check In</button>
             </div>
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    function getCookie(cookieKey) {
+        var cookieKeyIndex = document.cookie.indexOf(cookieKey)
+        if (cookieKeyIndex == -1) {
+            return null
+        }
+        var endOfCookieVal = document.cookie.substring(cookieKeyIndex).indexOf(";")
+        return document.cookie.substring(cookieKeyIndex + cookieKey.length + 1, cookieKeyIndex + endOfCookieVal)
+    }
+
+    var cookieKey = "snkrs-hunt-count"
+    var cookieVal = getCookie(cookieKey)
+    var cookieInt = 0
+    if (cookieVal != null) {
+        cookieInt = parseInt(cookieVal)
+    }
+
+    var button = document.getElementById("check-count")
+    button.innerHTML = "Check In Count: " + cookieInt
+    document.cookie = cookieKey + "=" + (cookieInt + 1)
+</script>
 </body>
 </html>
