@@ -108,10 +108,12 @@
 
     var cookieKey = "snkrs-hunt-count"
     var cookieVal = getCookie(cookieKey)
+    console.log("CookieVal " + cookieVal)
     var cookieInt = 0
     if (cookieVal != null) {
         cookieInt = parseInt(cookieVal)
     }
+    console.log("CookieInt " + cookieVal)
 
     var button = document.getElementById("check_count")
     button.innerHTML = "Check In Count: " + cookieInt
